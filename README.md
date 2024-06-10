@@ -1,6 +1,6 @@
 # Swag Labs
 
-![Swag Labs](https://github.com/abdullahnasre/Swag-Labs/af5be8f3d9366913bb555d9bc0b83392d6e03e63184cedc7e59654f6414287d6/68747470733a2f2f7777772e736175636564656d6f2e636f6d2f76312f696d672f4c6f67696e5f426f745f677261706869632e706e67)
+![Swag Labs](https://github.com/abdullahnasre/Swag-Labs/https://www.google.com/imgres?q=Swag%20labs&imgurl=https%3A%2F%2Fwww.saucedemo.com%2Fv1%2Fimg%2FLogin_Bot_graphic.png&imgrefurl=https%3A%2F%2Fwww.saucedemo.com%2Fv1%2F&docid=PGjApmT_g3QaRM&tbnid=CGZW8VlYfrp4dM&vet=12ahUKEwjhgJPC8NGGAxUC9bsIHbvtEU4QM3oECBgQAA..i&w=298&h=260&hcb=2&ved=2ahUKEwjhgJPC8NGGAxUC9bsIHbvtEU4QM3oECBgQAA)
 
 ## Table of Contents
 

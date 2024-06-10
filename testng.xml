@@ -1,0 +1,54 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Swag Labs">
+    <parameter name="browser" value="firefox"/>
+    <test name="Check Login With Valid Email and Password">
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="loginWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+ </test>
+    <test name="CheckOut">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testcases.TC02_CheckOutTest">
+                <methods>
+                    <include name="checkOutTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--            <class name="testcases.TC03_Products">-->
+        <!--                <methods>-->
+        <!--                    <include name="CheckOutProducts"/>-->
+        <!--                    <include name="testAddAndRemoveProducts"/>-->
+        <!--                </methods>-->
+        <!--            </class>-->
+        <!--           <class name="testcases.TC03_Products"/>-->

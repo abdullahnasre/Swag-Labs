@@ -1,16 +1,24 @@
 package testcases;
 
-import org.openqa.selenium.By;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.P01_LoginPage;
+import util.Utility;
+
+import java.io.IOException;
 
 public class TC01_Login extends TestBase {
 
     // define test data
-    String user = "standard_user";
-    String password = "secret_sauce";
+    String user = Utility.getExcelData(0, 0, "Sheet1");
+    String password = Utility.getExcelData(1, 0, "Sheet1");
+//    String user = Utility.getSingleJsonData(System.getProperty("user.dir") + "/src/test/resources/test_data/logindata.json", "username");
+//    String password = Utility.getSingleJsonData(System.getProperty("user.dir") + "/src/test/resources/test_data/logindata.json", "password");
+
+    public TC01_Login() throws IOException, ParseException {
+    }
 
     // check login positive scenarios
     @Test(priority = 1, description = "Login with Valid Username and Password")

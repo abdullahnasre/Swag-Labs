@@ -1,5 +1,14 @@
 package util;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,15 +30,67 @@ public class Utility {
         return indices.subList(0, numberOfItems);
     }
 
+    // read from Json
 
-        public static List<Integer> generateUniqueRandomNumbers(int count) {
-            List<Integer> numbers = new ArrayList<>();
-            for (int i = 1; i <= count; i++) {
-                numbers.add(i);
-            }
-            Collections.shuffle(numbers);
-            return numbers;
+    public static String getSingleJsonData(String jsonFilePath, String jsonField) throws IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+
+        FileReader fileReader = new FileReader(jsonFilePath);
+        Object obj = jsonParser.parse(fileReader);
+
+        JSONObject jsonObject = (JSONObject) obj;
+        return jsonObject.get(jsonField).toString();
+    }
+
+    // read from excel
+
+    public static String getExcelData(int RowNum, int ColNum, String SheetName) {
+        XSSFWorkbook workBook;
+        XSSFSheet sheet;
+        String projectPath = System.getProperty("user.dir");
+        String cellData = null;
+        try {
+            workBook = new XSSFWorkbook(projectPath + "/src/test/resources/test_data/data.xlsx");
+            sheet = workBook.getSheet(SheetName);
+            cellData = sheet.getRow(RowNum).getCell(ColNum).getStringCellValue();
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println(e.getCause());
+            e.printStackTrace();
         }
+        return cellData;
+    }
+
+    public static String[] readJson(String jsonFilePath, String jsonFieldArray, String field) throws IOException, ParseException {
+
+        JSONParser jsonParser = new JSONParser();
+
+        FileReader fileReader = new FileReader(jsonFilePath);
+        Object obj = jsonParser.parse(fileReader);
+
+        JSONObject jsonObject = (JSONObject) obj;
+        JSONArray array = (JSONArray) jsonObject.get(jsonFieldArray);
+
+        String arr[] = new String[array.size()];
+        for (int i = 0; i < array.size(); i++) {
+            JSONObject users = (JSONObject) array.get(i);
+            String fieldData = (String) users.get(field);
+
+            arr[i] = fieldData;
+        }
+        return arr;
+    }
+
+    public static List<Integer> generateUniqueRandomNumbers(int count) {
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 1; i <= count; i++) {
+            numbers.add(i);
+        }
+        Collections.shuffle(numbers);
+        return numbers;
+    }
+
     public static float parsePriceFromString(String priceString) {
         if (priceString == null || priceString.isEmpty()) {
             throw new IllegalArgumentException("Price string cannot be null or empty");
@@ -55,30 +116,10 @@ public class Utility {
     }
 
 
-        public static void main(String[] args) {
-            System.out.println(parsePriceFromString("$9.99"));
-        }
+    public static void main(String[] args) {
+        System.out.println(parsePriceFromString("$9.99"));
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //    public static HashSet<Integer> generateRandomUniqueIntFrom1To6() {

@@ -1,7 +1,6 @@
 # Swag Labs
 
-![Swag Labs]
-(https://camo.githubusercontent.com/af5be8f3d9366913bb555d9bc0b83392d6e03e63184cedc7e59654f6414287d6/68747470733a2f2f7777772e736175636564656d6f2e636f6d2f76312f696d672f4c6f67696e5f426f745f677261706869632e706e67)
+![Swag Labs] (https://www.saucedemo.com/v1/img/Login_Bot_graphic.png))
 
 ## Table of Contents
 

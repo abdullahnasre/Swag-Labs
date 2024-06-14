@@ -1,11 +1,11 @@
 package testcases;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.P01_LoginPage;
 import util.Utility;
 
-import java.io.IOException;
 
 public class TC01_Login extends TestBase {
 
@@ -19,7 +19,7 @@ public class TC01_Login extends TestBase {
         new P01_LoginPage(driver).inputEmail(user).inputPassword(password).clickLoginButton();
         //hard assertion after successfully login
         Assert.assertTrue(new P01_LoginPage(driver).verifyLoginSuccessfully());
-        Assert.assertFalse(!new P01_LoginPage(driver).verifyLoginSuccessfully());
+        Assert.assertTrue(new P01_LoginPage(driver).verifyLoginSuccessfully());
         Assert.assertEquals(new P01_LoginPage(driver).verifyLogin(), "Products");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/v1/inventory.html");
         Assert.assertTrue(new P01_LoginPage(driver).verfiyADDButtonVisible());

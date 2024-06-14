@@ -53,7 +53,6 @@ public class P04_ProductsPage {
             System.out.println("Removed item price: $" + price);
             System.out.println("New total price: $" + total);
         }
-        //return this;
 
         return null;
     }

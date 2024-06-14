@@ -120,23 +120,3 @@ public class Utility {
         System.out.println(parsePriceFromString("$9.99"));
     }
 }
-
-
-//    public static HashSet<Integer> generateRandomUniqueIntFrom1To6() {
-//        HashSet<Integer> numbers = new HashSet<>();
-//        Random random = new Random();
-//        while (numbers.size() < 6) {
-//            int t=random.nextInt(6) + 1;
-//            System.out.println(t);
-//            numbers.add(t);
-//        }
-//        return numbers; // Convert HashSet to List and pick the first element
-//    }
-//
-//    public static void main(String[] args) {
-//        System.out.println(generateRandomUniqueIntFrom1To6().size());
-//
-//        for(int i=0;i<6;i++)
-//            System.out.println(new ArrayList<Integer>(generateRandomUniqueIntFrom1To6()));
-//    }
-

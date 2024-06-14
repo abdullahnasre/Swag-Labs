@@ -10,17 +10,45 @@
             </class>
         </classes>
     </test>
-    <!--    <test name="CheckOut">-->
-    <!--        <parameter name="browser" value="chrome"/>-->
-    <!--        <classes>-->
-    <!--            <class name="testcases.TC02_CheckOutTest">-->
-    <!--                <methods>-->
-    <!--                    <include name="checkOutTest"/>-->
-    <!--                </methods>-->
-    <!--            </class>-->
-    <!--        </classes>-->
-    <!--    </test>-->
+        <test name="CheckOut">
+            <parameter name="browser" value="chrome"/>
+            <classes>
+                <class name="testcases.TC02_CheckOutTest">
+                    <methods>
+                        <include name="checkOutTest"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
 </suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!--            <class name="testcases.TC03_Products">-->

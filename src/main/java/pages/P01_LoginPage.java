@@ -5,10 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class P01_LoginPage {
 
-    // 1- define webdriver
-    // 2- define constructor and initialize webdriver
-    // 3- define locators using By
-    // 4- define action methods for each locator
     WebDriver driver;
 
     public P01_LoginPage(WebDriver driver) {
@@ -48,6 +44,5 @@ public class P01_LoginPage {
     public boolean verfiyADDButtonVisible() {
         return driver.findElement(ADD_TO_CARD_BUTTON).isDisplayed();
     }
-
 
 }

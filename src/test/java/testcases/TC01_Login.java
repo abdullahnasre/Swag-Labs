@@ -1,6 +1,4 @@
 package testcases;
-
-import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -14,11 +12,6 @@ public class TC01_Login extends TestBase {
     // define test data
     String user = Utility.getExcelData(0, 0, "Sheet1");
     String password = Utility.getExcelData(1, 0, "Sheet1");
-//    String user = Utility.getSingleJsonData(System.getProperty("user.dir") + "/src/test/resources/test_data/logindata.json", "username");
-//    String password = Utility.getSingleJsonData(System.getProperty("user.dir") + "/src/test/resources/test_data/logindata.json", "password");
-
-    public TC01_Login() throws IOException, ParseException {
-    }
 
     // check login positive scenarios
     @Test(priority = 1, description = "Login with Valid Username and Password")
@@ -30,14 +23,12 @@ public class TC01_Login extends TestBase {
         Assert.assertEquals(new P01_LoginPage(driver).verifyLogin(), "Products");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/v1/inventory.html");
         Assert.assertTrue(new P01_LoginPage(driver).verfiyADDButtonVisible());
-        //Assert.assertTrue(driver.findElement(By.tagName("body")).toString().contains("Sauce Labs Backpack"));
 
         // soft assertion
         SoftAssert soft = new SoftAssert();
         soft.assertEquals(new P01_LoginPage(driver).verifyLogin(), "Products");
         soft.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/v1/inventory.html");
         soft.assertTrue(new P01_LoginPage(driver).verfiyADDButtonVisible());
-        //soft.assertTrue(driver.findElement(By.tagName("body")).toString().contains("Products"));
         soft.assertAll();
 
     }
@@ -57,5 +48,4 @@ public class TC01_Login extends TestBase {
     public void loginWithValidData_N() {
         new P01_LoginPage(driver).inputEmail(user).inputPassword(password).clickLoginButton();
     }
-
 }
